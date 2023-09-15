@@ -1,25 +1,33 @@
 import Select from 'react-select';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Filter = () => {
-  const optionsBrand = [
-    { value: 'Buick', label: 'Buick' },
-    { value: 'Volvo', label: 'Volvo' },
-    { value: 'Hummer', label: 'Hummer' },
-    { value: 'Subaru', label: 'Subaru' },
-    { value: 'Mitsubishi', label: 'Mitsubishi' },
-    { value: 'Nissan', label: 'Nissan' },
-    { value: 'Lincoln', label: 'Lincoln' },
-    { value: 'GMC', label: 'GMC' },
-    { value: 'Hyundai', label: 'Hyundai' },
-  ];
-  const optionsPrice = [
-    { value: '30', label: '30' },
-    { value: '40', label: '40' },
-    { value: '50', label: '50' },
-    { value: '60', label: '60' },
-    { value: '70', label: '70' },
-    { value: '80', label: '80' },
-  ];
+  const [options, setOptions] = useState([]);
+  const [price, setPrice] = useState([]);
+
+  const optionsBrand = options
+    .filter((item, index, array) => array.indexOf(item) === index)
+    .map(item => ({ value: item, label: item }));
+
+  const optionsPrice = price
+    .filter((item, index, array) => array.indexOf(item) === index)
+    .sort((a, b) => a - b)
+    .map(item => ({ value: item, label: item }));
+
+  useEffect(() => {
+    axios
+      .get('https://6488bd1e0e2469c038fe48d9.mockapi.io/advert')
+      .then(({ data }) => {
+        setOptions(data.map(({ make }) => make));
+        setPrice(
+          data.map(({ rentalPrice }) =>
+            rentalPrice.slice(1, rentalPrice.length)
+          )
+        );
+      })
+      .catch();
+  }, []);
 
   return (
     <div>
