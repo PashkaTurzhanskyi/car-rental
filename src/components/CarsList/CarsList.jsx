@@ -5,20 +5,17 @@ import { useEffect, useState } from 'react';
 const CarsList = () => {
   const [listCars, setListCars] = useState([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(8);
 
   useEffect(() => {
     axios
-      .get(
-        `https://6488bd1e0e2469c038fe48d9.mockapi.io/advert?p=${page}&l=${limit}`
-      )
+      .get(`https://6488bd1e0e2469c038fe48d9.mockapi.io/advert?p=${page}&l=8`)
       .then(({ data }) => setListCars(prev => [...prev, ...data]))
       .catch();
-  }, [page, limit]);
+  }, [page]);
 
   const handlePageChange = () => {
-    setPage(prev => prev + 1);
-    setLimit(prev => prev + 100);
+    console.log('button click');
+    setPage(page + 1);
   };
 
   return (

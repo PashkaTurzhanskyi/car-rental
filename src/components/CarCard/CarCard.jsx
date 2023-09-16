@@ -23,6 +23,7 @@ const CarCard = ({
         {address.split(', ')[1]} | {address.split(', ')[2]} | {rentalCompany} |{' '}
         {type} | {model} | {id} | {functionalities[0]}
       </p>
+      <button type="button">Learn more</button>
     </li>
   );
 };
