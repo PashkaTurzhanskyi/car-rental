@@ -23,6 +23,8 @@ const CarCard = ({
   const handleClick = () => {
     setShowModal(prev => !prev);
     console.log(id, make);
+    const data = { id, make };
+    console.log(data);
   };
 
   return (
