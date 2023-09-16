@@ -34,6 +34,12 @@ const CarsList = () => {
             type={car.type}
             id={car.id}
             functionalities={car.functionalities}
+            fuelConsumption={car.fuelConsumption}
+            engineSize={car.engineSize}
+            description={car.description}
+            accessories={car.accessories}
+            rentalConditions={car.rentalConditions}
+            mileage={car.mileage}
           />
         ))}
       </ul>
