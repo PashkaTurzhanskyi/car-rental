@@ -3,10 +3,11 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const Filter = () => {
-  const [options, setOptions] = useState([]);
+  const [brandList, setBrandList] = useState([]);
+  const [brandChosen, setBrandChosen] = useState('');
   const [price, setPrice] = useState([]);
 
-  const optionsBrand = options
+  const optionsBrand = brandList
     .filter((item, index, array) => array.indexOf(item) === index)
     .map(item => ({ value: item, label: item }));
 
@@ -19,7 +20,7 @@ const Filter = () => {
     axios
       .get('https://6488bd1e0e2469c038fe48d9.mockapi.io/advert')
       .then(({ data }) => {
-        setOptions(data.map(({ make }) => make));
+        setBrandList(data.map(({ make }) => make));
         setPrice(
           data.map(({ rentalPrice }) =>
             rentalPrice.slice(1, rentalPrice.length)
@@ -29,11 +30,17 @@ const Filter = () => {
       .catch();
   }, []);
 
+  const handleBrandChoose = () => {};
+
   return (
     <div>
       <div>
         <p>Car brand</p>
-        <Select options={optionsBrand} placeholder="Enter the text" />
+        <Select
+          options={optionsBrand}
+          onChange={handleBrandChoose}
+          placeholder="Enter the text"
+        />
       </div>
       <div>
         <p>Price/ 1 hour</p>
