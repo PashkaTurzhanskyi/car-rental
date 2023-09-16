@@ -5,6 +5,9 @@ import { useEffect, useState } from 'react';
 const Filter = () => {
   const [brandList, setBrandList] = useState([]);
   const [brandChosen, setBrandChosen] = useState('');
+  console.log(brandChosen);
+  const [priceChosen, setPriceChosen] = useState('');
+  console.log(priceChosen);
   const [price, setPrice] = useState([]);
 
   const optionsBrand = brandList
@@ -30,7 +33,7 @@ const Filter = () => {
       .catch();
   }, []);
 
-  const handleBrandChoose = () => {};
+  // const handleBrandChoose = () => {};
 
   return (
     <div>
@@ -38,13 +41,17 @@ const Filter = () => {
         <p>Car brand</p>
         <Select
           options={optionsBrand}
-          onChange={handleBrandChoose}
+          onChange={event => setBrandChosen(event.value)}
           placeholder="Enter the text"
         />
       </div>
       <div>
         <p>Price/ 1 hour</p>
-        <Select options={optionsPrice} placeholder="To $" />
+        <Select
+          options={optionsPrice}
+          onChange={event => setPriceChosen(event.value)}
+          placeholder="To $"
+        />
       </div>
     </div>
   );
