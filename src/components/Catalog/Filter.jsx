@@ -1,6 +1,7 @@
 import Select from 'react-select';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import css from './Filter.module.css';
 
 const Filter = () => {
   const [brandList, setBrandList] = useState([]);
@@ -36,7 +37,7 @@ const Filter = () => {
   // const handleBrandChoose = () => {};
 
   return (
-    <div>
+    <div className={css.filter}>
       <div>
         <p>Car brand</p>
         <Select
@@ -53,6 +54,12 @@ const Filter = () => {
           placeholder="To $"
         />
       </div>
+      <div>
+        <p>Сar mileage / km</p>
+        <input />
+        <input />
+      </div>
+      <button type="submit">Search</button>
     </div>
   );
 };

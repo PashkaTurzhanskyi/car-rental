@@ -43,7 +43,7 @@ const Modal = ({
           <span>{model},</span>
           {year}
         </h2>
-        {/* <p>
+        <p>
           {address.split(', ')[1]} | {address.split(', ')[2]} | Id:{id} | Year:
           {year} | Type:{type}
         </p>
@@ -65,7 +65,7 @@ const Modal = ({
           {rentalConditions.split('\n')[2]}
           <span>Mileage:{mileage}</span>
           Price:{rentalPrice}
-        </p> */}
+        </p>
         <button>Rental car</button>
       </div>
     </div>

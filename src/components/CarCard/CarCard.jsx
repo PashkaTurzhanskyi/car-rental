@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Modal from 'components/Modal/Modal';
+import css from './CarCard.module.css';
 
 const CarCard = ({
   img,
@@ -28,7 +29,7 @@ const CarCard = ({
   };
 
   return (
-    <li>
+    <li className={css.cardCar}>
       <img src={img} alt={make} width="400px" />
       <h2>
         {make}
@@ -57,6 +58,7 @@ const CarCard = ({
           engineSize={engineSize}
           description={description}
           accessories={accessories}
+          functionalities={functionalities}
           rentalConditions={rentalConditions}
           mileage={mileage}
           rentalPrice={rentalPrice}
