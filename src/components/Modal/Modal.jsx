@@ -37,13 +37,13 @@ const Modal = ({
   return (
     <div className={css.Overlay} onClick={handleBackdropClick}>
       <div className={css.Modal}>
-        <img src={img} alt={make} />
+        <img src={img} alt={make} width="400px" />
         <h2>
           {make}
           <span>{model},</span>
           {year}
         </h2>
-        <p>
+        {/* <p>
           {address.split(', ')[1]} | {address.split(', ')[2]} | Id:{id} | Year:
           {year} | Type:{type}
         </p>
@@ -65,7 +65,7 @@ const Modal = ({
           {rentalConditions.split('\n')[2]}
           <span>Mileage:{mileage}</span>
           Price:{rentalPrice}
-        </p>
+        </p> */}
         <button>Rental car</button>
       </div>
     </div>
