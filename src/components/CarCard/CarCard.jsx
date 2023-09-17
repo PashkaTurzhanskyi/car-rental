@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import Modal from 'components/Modal/Modal';
 import css from './CarCard.module.css';
 
@@ -21,6 +22,7 @@ const CarCard = ({
   mileage,
 }) => {
   const [showModal, setShowModal] = useState(false);
+  const [showBlueHeart, setShowBlueHeart] = useState(false);
   const handleClick = () => {
     setShowModal(prev => !prev);
     console.log(id, make);
@@ -28,10 +30,22 @@ const CarCard = ({
     console.log(data);
   };
 
+  const toggleHeart = () => {
+    setShowBlueHeart(prev => !prev);
+    console.log({ id, make });
+  };
+
   return (
     <li className={css.cardCar}>
       <div className={css.thumb}>
         <img className={css.img} src={img} alt={make} width="401px" />
+        <div onClick={toggleHeart}>
+          {!showBlueHeart ? (
+            <AiOutlineHeart className={css.iconOutline} />
+          ) : (
+            <AiFillHeart className={css.iconFill} />
+          )}
+        </div>
       </div>
       <h2>
         {make}
@@ -55,7 +69,6 @@ const CarCard = ({
           year={year}
           address={address}
           id={id}
-          // year={year}
           type={type}
           fuelConsumption={fuelConsumption}
           engineSize={engineSize}

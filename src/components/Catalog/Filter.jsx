@@ -41,6 +41,7 @@ const Filter = () => {
       <div>
         <p>Car brand</p>
         <Select
+          className={css.selectBrand}
           options={optionsBrand}
           onChange={event => setBrandChosen(event.value)}
           placeholder="Enter the text"
@@ -49,6 +50,7 @@ const Filter = () => {
       <div>
         <p>Price/ 1 hour</p>
         <Select
+          className={css.selectPrice}
           options={optionsPrice}
           onChange={event => setPriceChosen(event.value)}
           placeholder="To $"
@@ -56,10 +58,12 @@ const Filter = () => {
       </div>
       <div>
         <p>Сar mileage / km</p>
-        <input placeholder="From" />
-        <input placeholder="To" />
+        <input className={css.input} placeholder="From" />
+        <input className={css.input} placeholder="To" />
       </div>
-      <button type="submit">Search</button>
+      <button className={css.button} type="submit">
+        Search
+      </button>
     </div>
   );
 };

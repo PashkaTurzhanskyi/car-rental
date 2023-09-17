@@ -4,6 +4,7 @@
 }
 
 .thumb {
+  position: relative;
   width: 274px;
   height: 268px;
   border-radius: 14px;
@@ -13,6 +14,24 @@
       rgba(18, 20, 23, 0) 41.07%
     ),
     #f3f3f2;
+}
+
+.iconOutline {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.iconFill {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  color: rgba(52, 112, 255, 1);
 }
 
 .thumb > img {

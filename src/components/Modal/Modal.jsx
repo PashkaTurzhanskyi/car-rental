@@ -66,7 +66,7 @@ const Modal = ({
           <span>Mileage:{mileage}</span>
           Price:{rentalPrice}
         </p>
-        <button>Rental car</button>
+        <a href="tel:+380730000000">Rental car</a>
       </div>
     </div>
   );
