@@ -1,13 +1,8 @@
-import { Link } from 'react-router-dom';
-import { NavigationLink, NavList, PageHeader, PageLogo } from './Header.styled';
-import pageLogoPath from 'images/page-logo.png';
+import { NavigationLink, NavList, PageHeader } from './Header.styled';
 
 const Header = () => {
   return (
     <PageHeader>
-      <Link>
-        <PageLogo src={pageLogoPath} width={150} />
-      </Link>
       <nav>
         <NavList>
           <li>

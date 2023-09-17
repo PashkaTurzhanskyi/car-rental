@@ -56,8 +56,8 @@ const Filter = () => {
       </div>
       <div>
         <p>Сar mileage / km</p>
-        <input />
-        <input />
+        <input placeholder="From" />
+        <input placeholder="To" />
       </div>
       <button type="submit">Search</button>
     </div>

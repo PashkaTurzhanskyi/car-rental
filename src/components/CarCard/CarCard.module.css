@@ -2,3 +2,27 @@
   width: 274px;
   height: 426px;
 }
+
+.thumb {
+  width: 274px;
+  height: 268px;
+  border-radius: 14px;
+  background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 2.5%,
+      rgba(18, 20, 23, 0) 41.07%
+    ),
+    #f3f3f2;
+}
+
+.thumb > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.button {
+  width: 100%;
+}

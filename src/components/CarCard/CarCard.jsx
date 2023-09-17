@@ -30,7 +30,9 @@ const CarCard = ({
 
   return (
     <li className={css.cardCar}>
-      <img src={img} alt={make} width="400px" />
+      <div className={css.thumb}>
+        <img className={css.img} src={img} alt={make} width="401px" />
+      </div>
       <h2>
         {make}
         <span>{model},</span>
@@ -39,9 +41,10 @@ const CarCard = ({
       <span>{rentalPrice}</span>
       <p>
         {address.split(', ')[1]} | {address.split(', ')[2]} | {rentalCompany} |{' '}
-        {type} | {model} | {id} | {functionalities[0]}
+        {type} | {model} | {id} |{' '}
+        {functionalities[0].split(' ').slice(0, 2).join(' ')}
       </p>
-      <button type="button" onClick={handleClick}>
+      <button className={css.button} type="button" onClick={handleClick}>
         Learn more
       </button>
       {showModal && (
