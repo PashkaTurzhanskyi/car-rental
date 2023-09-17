@@ -23,16 +23,34 @@ const CarCard = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [showBlueHeart, setShowBlueHeart] = useState(false);
+
   const handleClick = () => {
     setShowModal(prev => !prev);
-    console.log(id, make);
-    const data = { id, make };
-    console.log(data);
   };
 
   const toggleHeart = () => {
     setShowBlueHeart(prev => !prev);
-    console.log({ id, make });
+    window.localStorage.setItem(
+      'favorites',
+      JSON.stringify({
+        img,
+        make,
+        model,
+        year,
+        rentalPrice,
+        address,
+        rentalCompany,
+        type,
+        id,
+        functionalities,
+        fuelConsumption,
+        engineSize,
+        description,
+        accessories,
+        rentalConditions,
+        mileage,
+      })
+    );
   };
 
   return (
@@ -47,15 +65,24 @@ const CarCard = ({
           )}
         </div>
       </div>
-      <h2>
-        {make}
-        <span>{model},</span>
-        {year}
-      </h2>
-      <span>{rentalPrice}</span>
-      <p>
-        {address.split(', ')[1]} | {address.split(', ')[2]} | {rentalCompany} |{' '}
-        {type} | {model} | {id} |{' '}
+      <div className={css.modelAndPrice}>
+        <h2 className={css.modelTitle}>
+          {make}
+          <span className={css.model}> {model}, </span>
+          {year}
+        </h2>
+        <span className={css.modelTitle}>{rentalPrice}</span>
+      </div>
+      <p className={css.description}>
+        {address.split(', ')[1]} <span className={css.delimeter}>|</span>{' '}
+        {address.split(', ')[2]} <span className={css.delimeter}>|</span>{' '}
+        {rentalCompany}
+      </p>
+      <p className={css.description}>
+        {type} <span className={css.delimeter}>|</span> {model}{' '}
+        <span className={css.delimeter}>|</span> {id}{' '}
+        <span className={css.delimeter}>|</span>
+        {'  '}
         {functionalities[0].split(' ').slice(0, 2).join(' ')}
       </p>
       <button className={css.button} type="button" onClick={handleClick}>

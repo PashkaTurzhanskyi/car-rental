@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 import css from './Modal.module.css';
 
 const Modal = ({
@@ -37,6 +38,7 @@ const Modal = ({
   return (
     <div className={css.Overlay} onClick={handleBackdropClick}>
       <div className={css.Modal}>
+        <AiOutlineClose className={css.iconClose} onClick={onClose} />
         <img src={img} alt={make} width="400px" />
         <h2>
           {make}

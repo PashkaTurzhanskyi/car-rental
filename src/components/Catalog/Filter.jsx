@@ -34,8 +34,6 @@ const Filter = () => {
       .catch();
   }, []);
 
-  // const handleBrandChoose = () => {};
-
   return (
     <div className={css.filter}>
       <div>

@@ -7,6 +7,7 @@
   position: relative;
   width: 274px;
   height: 268px;
+  margin-bottom: 14px;
   border-radius: 14px;
   background: linear-gradient(
       180deg,
@@ -42,6 +43,51 @@
   border-radius: 14px;
 }
 
+.modelAndPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.modelTitle {
+  color: #121417;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+.model {
+  color: #3470ff;
+}
+
+.description {
+  color: rgba(18, 20, 23, 0.5);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.delimeter {
+  color: rgba(18, 20, 23, 0.1);
+}
+
 .button {
-  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  width: 274px;
+  height: 44px;
+  padding: 12px 99px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 1);
+  background: #3470ff;
 }
